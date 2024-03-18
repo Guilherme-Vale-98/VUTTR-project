@@ -1,37 +1,30 @@
-package com.gui.VUTTR.entities;
+package com.gui.VUTTR.model;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 @Builder
-@Entity
-public class Tool {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@Data
+public class ToolDto {
     private int id;
-    @NotNull
     @NotBlank
+    @NotNull
     @Size(max = 50, min = 3)
     private String name;
-    @NotNull
     @NotBlank
+    @NotNull
     private String link;
-
     private String description;
-    @NotNull
     @NotBlank
+    @NotNull
     private List<String> tags;
+
 }
