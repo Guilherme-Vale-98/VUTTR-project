@@ -1,5 +1,7 @@
 pipeline{
-    agent none
+ agent{
+        label "Built-In Node"
+    }
     tools {
         jdk 'Java17'
         maven 'Maven3'
