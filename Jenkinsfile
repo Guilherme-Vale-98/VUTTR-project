@@ -1,6 +1,6 @@
 pipeline{
     agent{
-        "none"
+        label "Default"
     }
     tools {
         jdk 'Java17'
