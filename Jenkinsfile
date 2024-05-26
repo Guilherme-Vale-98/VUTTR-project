@@ -20,13 +20,13 @@ pipeline{
         }
         stage("Build Application"){
             steps{
-                sh "mvn clean package"
+                powershell "mvn clean package"
             }
         }
 
         stage("Test Application"){
             steps{
-                sh "mvn test"
+                powershell "mvn test"
             }
         }
     }
