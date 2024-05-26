@@ -1,5 +1,6 @@
 package com.gui.VUTTR.controllers;
 
+import com.gui.VUTTR.entities.Tag;
 import com.gui.VUTTR.entities.Tool;
 import com.gui.VUTTR.exceptions.NotFoundException;
 import com.gui.VUTTR.model.ToolDto;
