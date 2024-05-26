@@ -18,6 +18,17 @@ pipeline{
                 git branch: 'master', credentialsId: 'GITHUB_LOGIN', url: 'https://github.com/Guilherme-Vale-98/VUTTR-project'
             }
         }
+        stage("Build APplication"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+
+        stage("Test Application"){
+            steps{
+                sh "mvn test"
+            }
+        }
     }
 
 }
