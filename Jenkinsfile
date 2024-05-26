@@ -10,12 +10,12 @@ pipeline{
                 cleanWs()
             }
         }
-    }
-    stages{
+
         stage("Checkout from SCM"){
             steps{
-                git branch: 'master', credentialsId: 'github', url: 'https://github.com/Guilherme-Vale-98/VUTTR-project'
+                git branch: 'master', credentialsId: 'GITHUB_LOGIN', url: 'https://github.com/Guilherme-Vale-98/VUTTR-project'
             }
         }
     }
+
 }
