@@ -39,6 +39,9 @@ pipeline{
         }
 
         stage("Sonarqube Analysis"){
+            environment{
+                scannerHome = tool "SONAR LOCAL"
+            }
             steps{
                 withSonarQubeEnv(credentialsId: 'jenkins-sonaqube-token' ){
                 powershell "mvn sonar:sonar"
