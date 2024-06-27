@@ -40,7 +40,7 @@ pipeline{
 
         stage("Sonarqube Analysis"){
             environment{
-                scannerHome = tool "SONAR LOCAL"
+                scannerHome = tool "sonarqube-scanner-latest"
             }
             steps{
                 withSonarQubeEnv(credentialsId: 'jenkins-sonaqube-token' ){
