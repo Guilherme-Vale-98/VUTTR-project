@@ -37,6 +37,14 @@ pipeline{
                 powershell "mvn test"
             }
         }
+
+        stage("Sonarqube Analysis"){
+            steps{
+                withSonarQubeEnv(credentialsId: 'jenkins-sonaqube-token' ){
+                powershell "mvn sonar:sonar"
+                }
+            }
+        }
     }
 
 }
