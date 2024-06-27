@@ -39,14 +39,12 @@ pipeline{
         }
 
         stage("Sonarqube Analysis"){
-            environment{
-                scannerHome = tool "sonarqube-scanner-latest"
-            }
             steps{
+                script{
                 withSonarQubeEnv(credentialsId: 'jenkins-sonaqube-token' ){
                 powershell "mvn sonar:sonar"
                 }
-            }
+            }}
         }
     }
 
