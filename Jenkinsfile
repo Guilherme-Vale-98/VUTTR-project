@@ -61,7 +61,7 @@ pipeline{
         stage("Quality Gate"){
             steps{
                 script{
-                    waitForQualityGate abortPipiline: false, credentialsId: 'jenkins-sonaqube-token' 
+                    waitForQualityGate abortPipeline: false, credentialsId: 'jenkins-sonaqube-token' 
                 }
             }}
         stage("Build & Push Docker Image"){
