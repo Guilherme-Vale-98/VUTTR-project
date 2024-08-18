@@ -8,7 +8,7 @@ pipeline{
     }
 
     environment{
-        APP_NAME= "VUTTR"
+        APP_NAME= "vuttr"
         RELEASE = "1.0.0"
         DOCKER_USER = "gukami98"
         DOCKER_PASS = "DOCKERHUB_LOGIN"
@@ -67,7 +67,7 @@ pipeline{
         stage("Build & Push Docker Image"){
             steps{
                 script{
-                   powershell 'docker context use default'
+                   powershell 'docker context use desktop-linux'
 
                    docker.withRegistry('', DOCKER_PASS) {
                     docker_image = docker.build "${IMAGE_NAME}"
