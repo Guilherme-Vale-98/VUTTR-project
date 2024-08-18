@@ -46,6 +46,14 @@ pipeline{
                 }
             }}
         }
+
+        stage("Quality Gate"){
+            steps{
+                script{
+                    waitForQualityGate abortPipiline: false, credentialsId: 'jenkins-sonaqube-token' 
+                }
+            }}
+        }
     }
 
 }
