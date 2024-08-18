@@ -11,7 +11,7 @@ pipeline{
         APP_NAME= "VUTTR"
         RELEASE = "1.0.0"
         DOCKER_USER = "gukami98"
-        DOCKER_PASS = ""
+        DOCKER_PASS = "DOCKERHUB_LOGIN"
         IMAGE_NAME =  "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}" 
     }
