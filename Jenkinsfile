@@ -67,6 +67,8 @@ pipeline{
         stage("Build & Push Docker Image"){
             steps{
                 script{
+                   powershell 'docker context use default'
+
                    docker.withRegistry('', DOCKER_PASS) {
                     docker_image = docker.build "${IMAGE_NAME}"
                    }
