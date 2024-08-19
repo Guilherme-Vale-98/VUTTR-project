@@ -29,6 +29,13 @@ pipeline{
                 git branch: 'master', credentialsId: 'GITHUB_LOGIN', url: 'https://github.com/Guilherme-Vale-98/VUTTR-project'
             }
         }
+         stage("Prepare Configuration") {
+            steps {
+                configFileProvider([configFile(fileId: 'config-1', targetLocation: 'src/main/resources/application.yml')]) {
+                   
+                }
+            }
+        }
 
         stage("Build Application"){
             steps{
