@@ -1,0 +1,25 @@
+services:
+  app:
+    image: 'gukami98/vuttr'
+    build:
+      context: .
+    container_name: vuttr
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/vuttr
+      - SPRING_DATASOURCE_USERNAME=gui
+      - SPRING_DATASOURCE_PASSWORD=12341234
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "3000:3000"
+
+  db:
+    image: postgres
+    container_name: db
+    environment:
+      - POSTGRES_USER=gui
+      - POSTGRES_PASSWORD=12341234
+      - POSTGRES_DB=vuttr
+    ports:
+      - "5432:5432"
